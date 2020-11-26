@@ -13,10 +13,13 @@ class Dataset():
     def convert_to_df(self):
         with open(self.filename) as file:
             data = json.load(file)
-            dataset = [[sample['id'],' '.join(sample['tokens']), ' '.join(sample['labels'])] for sample in data]
-        
-        self.df = pd.DataFrame(dataset, columns = ['id','sentence','labels'])
-       
+            if 'test' not in self.filename:
+                dataset = [[sample['id'],' '.join(sample['tokens']), ' '.join(sample['labels'])] for sample in data]
+                self.df = pd.DataFrame(dataset, columns = ['id','sentence','labels'])
+            else:
+                dataset = [[sample['id'],' '.join(sample['tokens'])] for sample in data]
+                self.df = pd.DataFrame(dataset, columns = ['id','sentence'])
+
     def write_to_csv(self):
         self.df.to_csv(self.output_file,index=False)
 
@@ -25,3 +28,4 @@ class Dataset():
 
 dev_data = Dataset('dataset\\dev.json')
 train_data = Dataset('dataset\\train.json')
+test_data = Dataset('dataset\\test.json')
