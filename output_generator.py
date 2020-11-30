@@ -21,14 +21,19 @@ def fixed_tags(tags):
     assert len(fixed) == len(tags)
     return fixed
 
+def naive_fixed_tags(tags):
+    fixed_tags_dict = {"U-short":"B-short","U-long":"B-long","L-short":"I-short","L-long":"I-long"}
+    return [fixed_tags_dict.get(tag, tag) for tag in tags]
+
 if __name__ == '__main__':
-    f = open('predict.txt')
+    f = open('predictions\\scibert_finetune\\finetune_predict.txt')
     predictions = f.readlines()
     preds = []
     for i,prediction in tqdm(enumerate(predictions)):
         prediction = json.loads(prediction)
-        preds.append({"id":f"TS-{i}", "tags":fixed_tags(prediction['tags'])})
+        preds.append({"id":f"TS-{i}", "predictions":fixed_tags(prediction['tags'])})
+        # preds.append({"id":f"TS-{i}", "predictions":naive_fixed_tags(prediction['tags'])})
 
-    f = open('output.json','w')
-    f.write(str(preds).replace('\'',))
+    f = open('predictions\\scibert_finetune\\output.json','w')
+    f.write(str(preds).replace("'",'"'))
     f.close()
