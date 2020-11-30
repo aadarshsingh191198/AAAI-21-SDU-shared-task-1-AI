@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 from tqdm import tqdm
-
+import sys
 def fixed_tags(tags):
     fixed = []
     cont = None
@@ -26,14 +26,16 @@ def naive_fixed_tags(tags):
     return [fixed_tags_dict.get(tag, tag) for tag in tags]
 
 if __name__ == '__main__':
-    f = open('predictions\\scibert_finetune\\finetune_predict.txt')
+    #python output_generator.py <input_file> <output_file>
+    f = open(sys.argv[1]) #predict.txt
     predictions = f.readlines()
+    f.close()
     preds = []
     for i,prediction in tqdm(enumerate(predictions)):
         prediction = json.loads(prediction)
         preds.append({"id":f"TS-{i}", "predictions":fixed_tags(prediction['tags'])})
         # preds.append({"id":f"TS-{i}", "predictions":naive_fixed_tags(prediction['tags'])})
-
-    f = open('predictions\\scibert_finetune\\output.json','w')
+        
+    f = open(sys.argv[2],'w') #output.json
     f.write(str(preds).replace("'",'"'))
     f.close()
