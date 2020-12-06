@@ -28,7 +28,7 @@ In order to familiarize the participants with this task, we provide a rule-based
 `python code/character_match.py -input <path/to/input.json> -output <path/to/output.json>`
 
 Please replace the `<path/to/input.json>` and `<path/to/output.json>` with the real paths to the input file (e..g, `dataset/dev.json`) and output file. The output file contains the predictions and can be evaluated by the scorer using the command described in the next section. The official scores for this baseline are: *Precision: 93.22%, Recall: 78.90%, F1: 85.46%*
-  
+
 # Evaluation
 
 To evaluate the predictions (in the format provided in `dataset/predictions.json` file), run the following command:
@@ -39,36 +39,11 @@ The `path/to/gold.json` and `path/to/predictions.json` should be replaced with t
 
 `python scorer.py -g path/to/gold.json -p path/to/predictions.json -v`
 
-# Participation
+**The CodaLab competition** - [Acronym Identification](https://competitions.codalab.org/competitions/26609).
 
-In order to participate, please first fill out this form to register for the shared tasks: https://forms.gle/NvnT549mSbyeJQAPA. The team name that is provided in this form will be used in the subsequent submissions and communications. The shared task is organized in two separate phases:
-- *Development Phase*: In this phase, the participants will use the training/development sets provided in this repository to design and develop their models. 
-- *Evaluation Phase*: Two weeks before the system runs due, i.e., 20th November 2020, the test set is released here. The test set has the same distribution and format as the development set. Run your model on the provided test set and save the prediction results in a Json file with the same format as the "predictions.json" file. Name the prediction file as "**output.json**" and send that to the email address sdu-aaai21@googlegroups.com with title "Results of AI-[TEAM-name]-[RUN-ID]", where "[TEAM-name]" should be replaced with the name of your team provided in the registration form and "[RUN-ID]" with a number between 1 to 10 to identify the model run. Each participant team is allowed to submit up to 10 different model runs. Note that your official score is reported for the model run with ID 1. In addition to the "output.json" file, please include the following information in your email:
-    - Model Description: A brief summary of the model architecture. If your model is using word embedding, please specify what type of word embedding your model is using.
-    - Extra Data: Whether or not the model employs other resources/data, e.g., acronym glossaries, in the development or evaluation phases.
-    - Training/Evaluation Time: How long the model takes to be trained/evaluated on the provided dataset
-    - Run Description: A brief description on what is the difference in the recent model run compared to other runs (if it is applicable)
-    - Plan for System Report: If you have any plan to submit your system report or release your model publicly, please specify that. Participants are strongly encouraged to submit a system report, regardless of the results.
-
-For more information, see [SDU@AAAI-21](https://sites.google.com/view/sdu-aaai21/shared-task).
-
-**Update**: The CodaLab competitions for the shared task is open. Participants can also submit their results to [Acronym Identification](https://competitions.codalab.org/competitions/26609) competition. For more information, please check the [CodaLab competition for Acronym Identification](https://competitions.codalab.org/competitions/26609).
-
-# Citation
-If you use the dataset, baseline or evaluation script released in this repo, please cite our paper:
-
-```
-@inproceedings{veyseh-et-al-2020-what,
-   title={{What Does This Acronym Mean? Introducing a New Dataset for Acronym Identification and Disambiguation}},
-   author={Amir Pouran Ben Veyseh and Franck Dernoncourt and Quan Hung Tran and Thien Huu Nguyen},
-   year={2020},
-   booktitle={Proceedings of COLING},
-   link={https://arxiv.org/pdf/2010.14678v1.pdf}
-}
-```
-
-# Licenses
-The dataset provided for this shared task is licensed under [CC BY-NC-SA 4.0 international license](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode), and the evaluation script and the baseline are licensed under MIT license.
+# Parent repo - https://github.com/amirveyseh/AAAI-21-SDU-shared-task-1-AI
 
 # References
 [1] Schwartz AS, Hearst MA. A simple algorithm for identifying abbreviation definitions in biomedical text. Pac Symp Biocomput. 2003:451-62. PMID: 12603049.
+[2] Scibert: https://github.com/allenai/scibert
+[3] Bert-sklearn: https://github.com/charles9n/bert-sklearn
