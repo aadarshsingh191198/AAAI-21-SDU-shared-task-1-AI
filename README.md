@@ -1,6 +1,13 @@
 # SDU@AAAI-21 - Shared Task 1: Acronym Identification
 
-This repository contains the acronym identification training and development set along with the evaluation scripts for the [acronym identification task at SDU@AAAI-21](https://sites.google.com/view/sdu-aaai21/shared-task).
+This repository contains the following:
+* acronym identification training and development set along with the evaluation scripts for the [acronym identification task at SDU@AAAI-21](https://sites.google.com/view/sdu-aaai21/shared-task)[*]
+* scripts to generate data as per usecase[+]
+* notebooks containing training, validation and prediction code[+]
+* scripts to generate output as per the required format[+]
+
+[*] - Already present in the original repository
+[+] - Added by me
 
 # Dataset
 
