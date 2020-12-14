@@ -55,11 +55,11 @@ The `path/to/gold.json` and `path/to/predictions.json` should be replaced with t
 
 `python scorer.py -g path/to/gold.json -p path/to/predictions.json -v`
 
-**The CodaLab competition** - [Acronym Identification](https://competitions.codalab.org/competitions/26609).
+**The CodaLab competition** - [Acronym Identification](https://competitions.codalab.org/competitions/26609)
 
-**Parent repo** - https://github.com/amirveyseh/AAAI-21-SDU-shared-task-1-AI)
+**Parent repo** - https://github.com/amirveyseh/AAAI-21-SDU-shared-task-1-AI
 
 # References
-[1] Schwartz AS, Hearst MA. A simple algorithm for identifying abbreviation definitions in biomedical text. Pac Symp Biocomput. 2003:451-62. PMID: 12603049.
-[2] Scibert: https://github.com/allenai/scibert
+[1] Schwartz AS, Hearst MA. A simple algorithm for identifying abbreviation definitions in biomedical text. Pac Symp Biocomput. 2003:451-62. PMID: 12603049.\
+[2] Scibert: https://github.com/allenai/scibert \
 [3] Bert-sklearn: https://github.com/charles9n/bert-sklearn
